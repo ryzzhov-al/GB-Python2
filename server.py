@@ -8,14 +8,14 @@ server_sock = socket.socket(
         proto = 0) #создаем сокет
 
 server_sock.bind(("127.0.0.1", 12345)) #привязываем сокет к конкретному ip(127.0.0.1 - адрес используется 
-                                       #для сокдинения с одним и тем же компьютером)
+                                       #для соединения с одним и тем же компьютером)
 server_sock.listen(5) #создаем слушающий сокет(ждём подключение); 5 - очередь подключения
 
 server_sock.settimeout(20) 
 
 while 1:
 
-    sock, addr = server_sock.accept() #addr - адрес клиента который подключисля
+    sock, addr = server_sock.accept() #addr - адрес клиента который подключился
 
     prog = \
         {
@@ -35,4 +35,4 @@ while 1:
     #result = lib.main_loop(sock, prog)
     
 
-    print(result)#
+    print(result)
